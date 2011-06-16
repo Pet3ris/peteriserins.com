@@ -1,0 +1,90 @@
+---
+layout: default
+title: Peteris Erins ~ Mathematics Powered Programmer
+---
+
+<p>
+  My name is Peteris Erins, and I'm a Latvian-born programmer
+  pursuing a Mathematics degree at Cambridge University.
+</p>
+
+<nav id="nav">
+    <ul>
+        <li><a href="#recent">Recent</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#archive">Archive</a></li>
+        <li><a href="#colophon">Colophon</a></li>
+    </ul>
+</nav>
+
+<h3><a class="navh" name='recent'>Recent</a></h3>
+
+
+<table class="posts">
+{% for post in site.posts limit:5 %}
+  <tr>
+    <td><date>{{ post.date | date_to_string }}</date></td>
+    <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+  </tr>
+{% endfor %}
+</table>
+
+<nav class="toplink"><a href="#top">up</a></nav>
+
+<h3><a class="navh" name="about">About</a></h3>
+
+<p> 
+    In High School, I had the honor of representing Latvia in multiple
+    International Olympiads in Mathematics and Informatics. Now my
+    attention has turned to learning and applying new programming
+    paradigms. If your company is using functional or dynamic languages,
+    exploring new ways of using the web or simply building something
+    awesome, I might be interested in working with you.
+</p> 
+<p> 
+    To contact me, use this
+    <a href="mailto:peteris.erins@gmail.com">address</a>. To see what I
+    am up to, tune in to my <a href="http://twitter.com/P_E">Twitter</a>.
+    A more detailed breakdown of my skills and experiences is available
+    at <a href="http://linkedin.com/in/peteriserins">LinkedIn</a>.
+    Quite likely, most of my public code is at
+    <a href="http://www.topcoder.com/tc?module=MemberProfile&amp;cr=22719825"> 
+        TopCoder</a>, but there is a also a
+    <a href="http://github.com/pet3ris">GitHub</a> account, that
+    is yet, but soon to get the attention it deserves.
+</p>
+
+<nav class="toplink"><a href="#top">up</a></nav>
+
+<h3><a class="navh" name="archive">Archive</a></h3>
+
+
+<table class="posts">
+{% for post in site.posts %}
+  <tr>
+    <td><date>{{ post.date | date_to_string }}</date></td>
+    <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+  </tr>
+{% endfor %}
+</table>
+
+<nav class="toplink"><a href="#top">up</a></nav>
+
+<h3><a class="navh" name="colophon">Colophon</a></h3>
+
+<p>
+  This website and blog written with the tandem of <a href="http://www.vim.org">Vim</a>
+  and <a href="http://www.jsfiddle.net">jsfiddle</a> on a Linux laptop.
+  <a href="http://www.html5boilerplate.com">HTML5 boilerplate</a> used as template and build script.
+  Everything stitched together with <a href="https://github.com/mojombo/jekyll">Jekyll</a>.
+  Source available at <a href="http://github.com/Pet3ris/peteriserins.com">GitHub</a>.
+  Please note that the website is still very much a work in progress being my first serious front-end endeavour.
+</p>
+<p>
+    <div>
+        <span class="bucket" id="text_bucket"></span>
+        <span class="bucket" id="link_bucket"></span>
+    </div>
+</p>
+
+<nav class="toplink"><a href="#top">up</a></nav>

@@ -1,0 +1,23 @@
+{% include html.html %}
+  <head>
+{% include head_post.html %}
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <nav><a href="../../../index.html">&laquo back</a></nav>
+{{ content }}
+
+        <nav class="toplink"><a href="#top">up</a></nav>
+        <h3>Comments</h3>
+{% include disqus.html %}
+      </div>
+      <footer>
+        Peteris Erins &copy; 2011
+      </footer>
+    </div> <!--! end of #container -->
+
+{% include scripts_post.html %}
+  </body>
+</html>
