@@ -4,7 +4,7 @@ title: Hello World!
 ---
 
 ## {{ page.title }}
-<date>06.16.2011</date>
+<time>06.16.2011</time>
 
 After two days of hard work, apparently there was something worth
 publishing, so here we are.
