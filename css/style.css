@@ -229,7 +229,8 @@ footer { margin-top: 1.8em; }
 
 /* Misc */
 
-#disqus_thread h3 { font-size: 1.5em; margin-top: 1.2em; line-height: 1.2em; }
+#disqus_thread h3 { font-size: 1em; margin-top: 1.2em; }
+#disqus_thread ul, #disqus_thread ol { left: 0; }
 
 /* Index */
 
@@ -302,7 +303,8 @@ j.mp/bestclearfix */
 /* Grade-A Mobile Browsers (Opera Mobile, Mobile Safari, Android Chrome)
 consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
 @media screen and (max-device-width: 480px) {
-
+  ol, ul { left: 0; }
+  #container { margin: 1.8em; }
 
 /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you: j.mp/textsizeadjust */
 /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
