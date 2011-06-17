@@ -217,6 +217,7 @@ pre { padding: 0; }
 code { font-family: "Courier New", Courier, monospace, sans-serif; }
 code pre { background: #483C32; color: #fff; border-radius: 0.4em; -webkit-border-radius: 0.4em; -moz-border-radius: 0.4em;}
 code { line-height: 1.8em; }
+
 /* Layout */
 
 #container { margin: 3.6em; width: 32em;}
@@ -245,7 +246,9 @@ footer { margin-top: 1.8em; }
 #text_bucket { background: #483C32; }
 #link_bucket { margin-top: 0.5em; background: #08C; }
 
+/* Post */
 
+.sharing { margin-top: 1.8em; }
 
 
 

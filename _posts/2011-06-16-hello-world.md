@@ -1,5 +1,5 @@
 ---
-layout: post_math
+layout: post
 title: Hello World!
 ---
 
