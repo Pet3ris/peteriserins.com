@@ -208,14 +208,13 @@ h6 { font-size: 1em;   margin-top: 1.8em;}
 /* q { font-style: italic; } */
 blockquote { text-indent: -0.5em; }
 ul li { list-style-type: disc; }
-ul, ol { margin-left: 0; padding-left: 1.5em; position: relative; left: -1.5em; }
+ul, ol { margin-left: 0; margin-top: 1.8em; padding-left: 1.5em; position: relative; left: -1.5em; }
 li ul, li ol { left: 0; }
 em { font-style: italic; }
 /* what to do with <hr /> ? */
 
-pre { padding: 0; }
 code { font-family: "Courier New", Courier, monospace, sans-serif; }
-code pre { background: #483C32; color: #fff; border-radius: 0.4em; -webkit-border-radius: 0.4em; -moz-border-radius: 0.4em;}
+pre { margin-top: 1.8em; padding: 0; background: #483C32; color: #fff; border-radius: 0.4em; -webkit-border-radius: 0.4em; -moz-border-radius: 0.4em;}
 code { line-height: 1.8em; }
 
 /* Layout */
@@ -304,7 +303,7 @@ j.mp/bestclearfix */
 consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
 @media screen and (max-device-width: 480px) {
   ol, ul { left: 0; }
-  #container { margin: 1.8em; }
+  #container { margin: 0; }
 
 /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you: j.mp/textsizeadjust */
 /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
