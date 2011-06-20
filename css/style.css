@@ -214,7 +214,7 @@ em { font-style: italic; }
 /* what to do with <hr /> ? */
 
 code { font-family: "Courier New", Courier, monospace, sans-serif; }
-pre { margin-top: 1.8em; padding: 0; background: #483C32; color: #fff; border-radius: 0.4em; -webkit-border-radius: 0.4em; -moz-border-radius: 0.4em;}
+pre { margin-top: 1.8em; padding: 0; }
 code { line-height: 1.8em; }
 
 /* Layout */
