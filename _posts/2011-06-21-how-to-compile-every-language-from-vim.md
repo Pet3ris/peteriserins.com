@@ -4,7 +4,7 @@ title: "How To: Compile every language from Vim"
 ---
 
 ## {{ page.title }}
-<time>06.21.2011</time>
+<time>21.06.2011</time>
 
 *Warning*: This post is for users of the Vim text editor. It might not be
 relevant to you unless you have been using it already or want a compelling

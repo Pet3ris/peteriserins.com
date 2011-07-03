@@ -4,7 +4,7 @@ title: Free ePub and mobi books for programmers
 ---
 
 ## {{ page.title }}
-<time>06.24.2011</time>
+<time>24.06.2011</time>
 
 If you use an eReader, I'm sure you know the difference between a PDF and
 ePub/mobi book. In the case of the Kindle, for the latter, you can change the

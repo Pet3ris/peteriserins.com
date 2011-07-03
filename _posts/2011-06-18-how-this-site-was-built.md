@@ -4,7 +4,7 @@ title: How this site was built
 ---
 
 ## {{ page.title }}
-<time>06.18.2011</time>
+<time>18.06.2011</time>
 
 Let me begin by elaborating on the construction of this website. Instead of
 spraying a cloud of creepy sounding buzzwords, I'll try and start from the
