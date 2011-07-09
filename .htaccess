@@ -519,3 +519,8 @@ Options -Indexes
 <IfModule php5_module>
 php_value session.cookie_httponly true
 </IfModule>
+
+# My edits
+#RedirectMatch 301 /+(.*) https://plus.google.com/u/0/115771747876881317181//$1
+
+RewriteRule /\+ https://plus.google.com/u/0/115771747876881317181 [R=301,L]
