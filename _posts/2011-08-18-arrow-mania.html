@@ -1,0 +1,221 @@
+---
+layout: post
+title: Arrow mania
+---
+
+<h2>{{ page.title }}</h2>
+<time>18.08.2011</time>
+
+<p>
+  The <a href="http://en.wikipedia.org/wiki/Fortress_(programming_language)">Fortress language</a>
+  is a lesser-known programming language currently in development which among other things
+  promises to simplify concurrency via parallelism. It also allows the definition of various
+  operators and complicated precedence rules in ASCII, defining the way code will be presented
+  in LaTeX and how some character combinations would be translated to symbols.
+</p>
+<p>
+  There was an article in the wiki that drew my attention about defining which ASCII sequences
+  should map to every Unicode arrow-like character. It's an amusing article with little
+  applicability for most conventional programming languages. Only a small minority of them
+  define the way their code should be presented, however, a couple do allow the definition 
+  of operators or functions of a reasonable set of non-alphanumeric ASCII characters.
+</p>
+<p>
+  This is of use for, e.g, Haskell, Clojure programmers who might want to use the following
+  sensible guidelines if implementing some sort of Mathematical operator that has an adopted
+  arrow symbol. I hope the original author does not mind this article being copied in here.
+  I claim no rights and no ownership. Enjoy the copy below and the
+  <a href="https://gist.github.com/1154685">gist</a>.
+</p>
+
+<div class="wikipage"> 
+    <div id="searchable"><h3 id="RepresentingArrowsinASCII">Representing "Arrows" in ASCII</h3> 
+<p> 
+Here is a set of guiding principles for defining ASCII-expressible tokens for arrows and arrow-like things.
+</p> 
+<p> 
+Just as we reserved a space of ASCII-expressible tokens to serve for brackets, we can reserve some tokens that would otherwise never occur in practice for arrows.  Unfortunately, it's hard to express up and down arrows, but we can do quite well for left and right arrows.
+</p> 
+<p> 
+We will just describe right arrows here.  Left arrows are obtained by a fairly obvious reversal of characters and using <tt>&lt;</tt> for<tt> &gt;</tt>.  Bidirectional arrows are made by using two heads rather than a head and a tail.
+</p> 
+<p> 
+A right arrow has a right-pointing tail, a body, and a right-pointing head.  The body may include a center.  At least one of the head, the center, and the tail must be nonempty.
+</p> 
+<p> 
+A right-pointing tail consists of some number (possibly zero) of <tt>|</tt> characters followed by some number (possibly zero) of <tt>&gt;</tt> characters; among these may be interspersed <tt>*</tt> characters, but never two <tt>*</tt> characters in a row, and never a <tt>*</tt> at the left-hand end.
+</p> 
+<p> 
+A body consists of some nonzero number of <tt>-</tt>, <tt>=</tt>, and <tt>~</tt> characters.  If the body consists of more than two characters, then it may contain a center, provided that there must be at least one body character on each side of the center.  (If there is no center, we may simply say that the center is empty.)
+</p> 
+<p> 
+A nonempty center consists of some nonzero number of <tt>/</tt> characters, some nonzero number of <tt>|</tt> characters, or a single <tt>*</tt>.
+</p> 
+<p> 
+A right-pointing head consists of either (a) some number of <tt>|</tt>, <tt>&lt;</tt>, and <tt>&gt;</tt> characters provided that at least one <tt>&gt;</tt> is present and that any <tt>&lt;</tt> must be followed (not necessarily immediately) by a <tt>&gt;</tt>; or (b) some nonzero number of <tt>\</tt> characters or some nonzero number of <tt>/</tt> characters, followed by some number (possibly zero) of <tt>|</tt> characters (this case is used for harpoons); or (c) no characters (this case is used for arrow tails and tacks).  In either case (a) or case (b), there may be interspersed <tt>*</tt> characters,
+but never two <tt>*</tt> characters in a row, and never a <tt>*</tt> at the right-hand end.  If the head belongs to case (b), then the body must contain at least two characters.
+</p> 
+<p> 
+Certain of these are used as Twiki for Unicode arrows.  As a rule, we try to make faithful pictures of the arrows, but by convention we use <tt>=-</tt> for a triple shaft and <tt>-=-</tt> for a quadruple shaft; <tt>|&gt;</tt> indicates an open arrowhead, and <tt>*</tt> indicates blackness.
+</p> 
+<table class="wiki"> 
+<tr><td><tt>-&gt;</tt></td><td>                &#x2192;</td><td> U+2192 RIGHTWARDS ARROW
+</td></tr><tr><td><tt>-/-&gt;</tt></td><td>                        &#x219B;</td><td> U+219B RIGHTWARDS ARROW WITH STROKE
+</td></tr><tr><td><tt>~&gt;</tt></td><td>                &#x219D;</td><td> U+219D RIGHTWARDS WAVE ARROW
+</td></tr><tr><td><tt>-&gt;&gt;</tt></td><td>                &#x21A0;</td><td> U+21A0 RIGHTWARDS TWO HEADED ARROW
+</td></tr><tr><td><tt>-&gt;</tt></td><td>                &#x21A3;</td><td> U+21A3 RIGHTWARDS ARROW WITH TAIL
+</td></tr><tr><td><tt>|-&gt;</tt></td><td>                &#x21A6;</td><td> U+21A6 RIGHTWARDS ARROW FROM BAR
+</td></tr><tr><td><tt>=/=&gt;</tt></td><td>                &#x21CF;</td><td> U+21CF RIGHTWARDS DOUBLE ARROW WITH STROKE
+</td></tr><tr><td><tt>=&gt;</tt></td><td>                &#x21D2;</td><td> U+21D2 RIGHTWARDS DOUBLE ARROW
+</td></tr><tr><td><tt>=-&gt;</tt></td><td>                &#x21DB;</td><td> U+21DB RIGHTWARDS TRIPLE ARROW
+</td></tr><tr><td><tt>~~&gt;</tt></td><td>                &#x21DD;</td><td> U+21DD RIGHTWARDS SQUIGGLE ARROW
+</td></tr><tr><td><tt>-&gt;|</tt></td><td>                &#x21E5;</td><td> U+21E5 RIGHTWARDS ARROW TO BAR
+</td></tr><tr><td><tt>|=|&gt;</tt></td><td>                &#x21E8;</td><td> U+21E8 RIGHTWARDS WHITE ARROW
+</td></tr><tr><td><tt>||=|&gt;</tt></td><td>                &#x21F0;</td><td> U+21F0 RIGHTWARDS WHITE ARROW FROM WALL
+</td></tr><tr><td><tt>-|-&gt;</tt></td><td>        &#x21F8;</td><td> U+21F8 RIGHTWARDS ARROW WITH VERTICAL STROKE
+</td></tr><tr><td><tt>-||-&gt;</tt></td><td>                &#x21FB;</td><td> U+21FB RIGHTWARDS ARROW WITH DOUBLE VERTICAL STROKE
+</td></tr><tr><td><tt>-|&gt;</tt></td><td>                &#x21FE;</td><td> U+21FE RIGHTWARDS OPEN-HEADED ARROW
+</td></tr><tr><td><tt>-*-*&gt;</tt></td><td>                &#x2794;</td><td> U+2794 HEAVY WIDE-HEADED RIGHTWARDS ARROW
+</td></tr><tr><td><tt>=*-*&gt;</tt></td><td>                &#x2799;</td><td> U+2799 HEAVY RIGHTWARDS ARROW
+</td></tr><tr><td><tt>--*&gt;</tt></td><td>                &#x279B;</td><td> U+279B DRAFTING POINT RIGHTWARDS ARROW
+</td></tr><tr><td><tt>=*=*&gt;</tt></td><td>                &#x279C;</td><td> U+279C HEAVY ROUND-TIPPED RIGHTWARDS ARROW
+</td></tr><tr><td><tt>-|*&gt;</tt></td><td>                &#x279D;</td><td> U+279D TRIANGLE-HEADED RIGHTWARDS ARROW
+</td></tr><tr><td><tt>-*-|*&gt;</tt></td><td>                &#x279E;</td><td> U+279E HEAVY TRIANGLE-HEADED RIGHTWARDS ARROW
+</td></tr><tr><td><tt>=*=|*&gt;</tt></td><td>                &#x27A1;</td><td> U+27A1 BLACK RIGHTWARDS ARROW
+</td></tr><tr><td><tt>|*=*=*&gt;</tt></td><td>                &#x27A7;</td><td> U+27A7 SQUAT BLACK RIGHTWARDS ARROW
+</td></tr><tr><td><tt>|=|&gt;*&gt;</tt></td><td>                &#x27A9;</td><td> U+27A9 RIGHT-SHADED WHITE RIGHTWARDS ARROW
+</td></tr><tr><td><tt>|*=|&gt;        </tt></td><td>        &#x27AA;</td><td> U+27AA LEFT-SHADED WHITE RIGHTWARDS ARROW
+</td></tr><tr><td><tt>-&gt;</tt></td><td>                &#x27B3;</td><td> U+27B3 WHITE-FEATHERED RIGHTWARDS ARROW
+</td></tr><tr><td><tt>*&gt;-&gt;</tt></td><td>                &#x27B5;</td><td> U+27B5 BLACK-FEATHERED RIGHTWARDS ARROW
+</td></tr><tr><td><tt>*&gt;-*&gt;</tt></td><td>                &#x27B8;</td><td> U+27B8 HEAVY BLACK-FEATHERED RIGHTWARDS ARROW
+</td></tr><tr><td><tt>*&gt;-|*&gt;</tt></td><td>                &#x27BC;</td><td> U+27BC WEDGE-TAILED RIGHTWARDS ARROW
+</td></tr><tr><td><tt>*&gt;*&gt;-|*&gt;</tt></td><td>                &#x27BD;</td><td> U+27BD HEAVY WEDGE-TAILED RIGHTWARDS ARROW
+</td></tr><tr><td><tt>--&gt;</tt></td><td>                &#x27F6;</td><td> U+27F6 LONG RIGHTWARDS ARROW
+</td></tr><tr><td><tt>==&gt;</tt></td><td>                &#x27F9;</td><td> U+27F9 LONG RIGHTWARDS DOUBLE ARROW
+</td></tr><tr><td><tt>|--&gt;</tt></td><td>                &#x27FC;</td><td> U+27FC LONG RIGHTWARDS ARROW FROM BAR
+</td></tr><tr><td><tt>|==&gt;</tt></td><td>                &#x27FE;</td><td> U+27FE LONG RIGHTWARDS DOUBLE ARROW FROM BAR
+</td></tr><tr><td><tt>~~~&gt;        </tt></td><td>        &#x27FF;</td><td> U+27FF LONG RIGHTWARDS SQUIGGLE ARROW
+</td></tr><tr><td><tt>-|-&gt;&gt;</tt></td><td>                &#x2900;</td><td> U+2900 RIGHTWARDS TWO-HEADED ARROW WITH VERTICAL STROKE
+</td></tr><tr><td><tt>-||-&gt;&gt;</tt></td><td>                &#x2901;</td><td> U+2901 RIGHTWARDS TWO-HEADED ARROW WITH DOUBLE VERTICAL STROKE
+</td></tr><tr><td><tt>=|=&gt;        </tt></td><td>        &#x2903;</td><td> U+2903 RIGHTWARDS DOUBLE ARROW WITH VERTICAL STROKE
+</td></tr><tr><td><tt>|-&gt;&gt;        </tt></td><td>        &#x2905;</td><td> U+2905 RIGHTWARDS TWO-HEADED ARROW FROM BAR
+</td></tr><tr><td><tt>|=&gt;</tt></td><td>                &#x2907;</td><td> U+2907 RIGHTWARDS DOUBLE ARROW FROM BAR
+</td></tr><tr><td><tt>-|-&gt;</tt></td><td>                &#x2914;</td><td> U+2914 RIGHTWARDS ARROW WITH TAIL WITH VERTICAL STROKE
+</td></tr><tr><td><tt>-||-&gt;</tt></td><td>                &#x2915;</td><td> U+2915 RIGHTWARDS ARROW WITH TAIL WITH DOUBLE VERTICAL STROKE
+</td></tr><tr><td><tt>-&gt;&gt;</tt></td><td>                &#x2916;</td><td> U+2916 RIGHTWARDS TWO-HEADED ARROW WITH TAIL
+</td></tr><tr><td><tt>-|-&gt;&gt;</tt></td><td>                &#x2917;</td><td> U+2917 RIGHTWARDS TWO-HEADED ARROW WITH TAIL WITH VERTICAL STROKE
+</td></tr><tr><td><tt>-||-&gt;&gt;</tt></td><td>                &#x2918;</td><td> U+2918 RIGHTWARDS TWO-HEADED ARROW WITH TAIL WITH DOUBLE VERTICAL STROKE
+</td></tr><tr><td><tt>--</tt></td><td>                &#x291A;</td><td> U+291A RIGHTWARDS ARROW-TAIL
+</td></tr><tr><td><tt>--</tt></td><td>                &#x291C;</td><td> U+291C RIGHTWARDS DOUBLE ARROW-TAIL
+</td></tr><tr><td><tt>-&gt;&lt;*&gt;</tt></td><td>                &#x291E;</td><td> U+291E RIGHTWARDS ARROW TO BLACK DIAMOND
+</td></tr><tr><td><tt>|-&gt;&lt;*&gt;</tt></td><td>                &#x2920;</td><td> U+2920 RIGHTWARDS ARROW FROM BAR TO BLACK DIAMOND
+</td></tr><tr><td><tt>~-&gt;</tt></td><td>                &#x2933;</td><td> U+2933 WAVE ARROW POINTING DIRECTLY RIGHT
+</td></tr><tr><td><tt>-=-&gt;</tt></td><td>                &#x2B46;</td><td> U+2B46 RIGHTWARDS QUADRUPLE ARROW
+</td></tr><tr><td>          </td><td>    
+</td></tr><tr><td><tt>&lt;-</tt></td><td>                &#x2190;</td><td> U+2190 LEFTWARDS ARROW
+</td></tr><tr><td><tt>&lt;-/-</tt></td><td>                &#x219A;</td><td> U+219A LEFTWARDS ARROW WITH STROKE
+</td></tr><tr><td><tt>&lt;~</tt></td><td>                &#x219C;</td><td> U+219C LEFTWARDS WAVE ARROW
+</td></tr><tr><td><tt>&lt;&lt;-</tt></td><td>                &#x219E;</td><td> U+219E LEFTWARDS TWO HEADED ARROW
+</td></tr><tr><td><tt>&lt;-&lt;</tt></td><td>                &#x21A2;</td><td> U+21A2 LEFTWARDS ARROW WITH TAIL
+</td></tr><tr><td><tt>&lt;-|        </tt></td><td>        &#x21A4;</td><td> U+21A4 LEFTWARDS ARROW FROM BAR
+</td></tr><tr><td><tt>&lt;=/=</tt></td><td>                &#x21CD;</td><td> U+21CD LEFTWARDS DOUBLE ARROW WITH STROKE
+</td></tr><tr><td><tt>&lt;=</tt></td><td>        &#x21D0;</td><td> U+21D0 LEFTWARDS DOUBLE ARROW
+</td></tr><tr><td><tt>&lt;-=</tt></td><td>                &#x21DA;</td><td> U+21DA LEFTWARDS TRIPLE ARROW
+</td></tr><tr><td><tt>&lt;~~        </tt></td><td>        &#x21DC;</td><td> U+21DC LEFTWARDS SQUIGGLE ARROW
+</td></tr><tr><td><tt>|&lt;-</tt></td><td>                &#x21E4;</td><td> U+21E4 LEFTWARDS ARROW TO BAR
+</td></tr><tr><td><tt>&lt;|=|</tt></td><td>                &#x21E6;</td><td> U+21E6 LEFTWARDS WHITE ARROW
+</td></tr><tr><td><tt>&lt;-|-</tt></td><td>                &#x21F7;</td><td> U+21F7 LEFTWARDS ARROW WITH VERTICAL STROKE
+</td></tr><tr><td><tt>&lt;-||-</tt></td><td>                &#x21FA;</td><td> U+21FA LEFTWARDS ARROW WITH DOUBLE VERTICAL STROKE
+</td></tr><tr><td><tt>&lt;|-</tt></td><td>                &#x21FD;</td><td> U+21FD LEFTWARDS OPEN-HEADED ARROW
+</td></tr><tr><td><tt>&lt;--</tt></td><td>                &#x27F5;</td><td> U+27F5 LONG LEFTWARDS ARROW
+</td></tr><tr><td><tt>&lt;==</tt></td><td>                &#x27F8;</td><td> U+27F8 LONG LEFTWARDS DOUBLE ARROW
+</td></tr><tr><td><tt>&lt;--|</tt></td><td>        &#x27FB;</td><td> U+27FB LONG LEFTWARDS ARROW FROM BAR
+</td></tr><tr><td><tt>&lt;==|</tt></td><td>                &#x27FD;</td><td> U+27FD LONG LEFTWARDS DOUBLE ARROW FROM BAR
+</td></tr><tr><td><tt>&lt;=|=</tt></td><td>                &#x2902;</td><td> U+2902 LEFTWARDS DOUBLE ARROW WITH VERTICAL STROKE
+</td></tr><tr><td><tt>|=&gt;</tt></td><td>                &#x2906;</td><td> U+2906 LEFTWARDS DOUBLE ARROW FROM BAR
+</td></tr><tr><td><tt>--&lt;</tt></td><td>                &#x2919;</td><td> U+2919 LEFTWARDS ARROW-TAIL
+</td></tr><tr><td><tt>--&lt;&lt;</tt></td><td>                &#x291B;</td><td> U+291B LEFTWARDS DOUBLE ARROW-TAIL
+</td></tr><tr><td><tt>&lt;*&gt;&lt;-</tt></td><td>                &#x291D;</td><td> U+291D LEFTWARDS ARROW TO BLACK DIAMOND
+</td></tr><tr><td><tt>&lt;*&gt;&lt;-|</tt></td><td>                &#x291F;</td><td> U+291F LEFTWARDS ARROW FROM BAR TO BLACK DIAMOND
+</td></tr><tr><td><tt>&lt;*|=*=</tt></td><td>                &#x2B05;</td><td> U+2B05 LEFTWARDS BLACK ARROW
+</td></tr><tr><td><tt>&lt;~~~</tt></td><td>                       &#x2B33;</td><td> U+2B33 LONG LEFTWARDS SQUIGGLE ARROW
+</td></tr><tr><td><tt>&lt;&lt;-|-</tt></td><td>                &#x2B34;</td><td> U+2B34 LEFTWARDS TWO-HEADED ARROW WITH VERTICAL STROKE
+</td></tr><tr><td><tt>&lt;&lt;-||-</tt></td><td>                &#x2B35;</td><td> U+2B35 LEFTWARDS TWO-HEADED ARROW WITH DOUBLE VERTICAL STROKE
+</td></tr><tr><td><tt>&lt;&lt;-|</tt></td><td>                &#x2B36;</td><td> U+2B36 LEFTWARDS TWO-HEADED ARROW FROM BAR
+</td></tr><tr><td><tt>&lt;-|-&lt;</tt></td><td>                &#x2B39;</td><td> U+2B39 LEFTWARDS ARROW WITH TAIL WITH VERTICAL STROKE
+</td></tr><tr><td><tt>&lt;-||-&lt;</tt></td><td>                &#x2B3A;</td><td> U+2B3A LEFTWARDS ARROW WITH TAIL WITH DOUBLE VERTICAL STROKE
+</td></tr><tr><td><tt>&lt;&lt;-&lt;</tt></td><td>                &#x2B3B;</td><td> U+2B3B LEFTWARDS TWO-HEADED ARROW WITH TAIL
+</td></tr><tr><td><tt>&lt;&lt;-|-&lt;</tt></td><td>                &#x2B3C;</td><td> U+2B3C LEFTWARDS TWO-HEADED ARROW WITH TAIL WITH VERTICAL STROKE
+</td></tr><tr><td><tt>&lt;&lt;-||-&lt;</tt></td><td>                &#x2B3D;</td><td> U+2B3D LEFTWARDS TWO-HEADED ARROW WITH TAIL WITH DOUBLE VERTICAL STROKE
+</td></tr><tr><td><tt>&lt;-~</tt></td><td>                &#x2B3F;</td><td> U+2B3F WAVE ARROW POINTING DIRECTLY LEFT 
+</td></tr><tr><td><tt>&lt;-=-</tt></td><td>                &#x2B45;</td><td> U+2B45 LEFTWARDS QUADRUPLE ARROW
+</td></tr><tr><td>          </td><td>    
+</td></tr><tr><td><tt>&lt;-&gt;</tt></td><td>                &#x2194;</td><td> U+2194 LEFT RIGHT ARROW
+</td></tr><tr><td><tt>&lt;~&gt;</tt></td><td>                &#x21AD;</td><td> U+21AD LEFT RIGHT WAVE ARROW
+</td></tr><tr><td><tt>&lt;-/-&gt;</tt></td><td>                &#x21AE;</td><td> U+21AE LEFT RIGHT ARROW WITH STROKE
+</td></tr><tr><td><tt>&lt;=/=&gt;</tt></td><td>                &#x21CE;</td><td> U+21CE LEFT RIGHT DOUBLE ARROW WITH STROKE
+</td></tr><tr><td><tt>&lt;=&gt;</tt></td><td>                &#x21D4;</td><td> U+21D4 LEFT RIGHT DOUBLE ARROW
+</td></tr><tr><td><tt>&lt;-|-&gt;</tt></td><td>                &#x21F9;</td><td> U+21F9 LEFT RIGHT ARROW WITH VERTICAL STROKE
+</td></tr><tr><td><tt>&lt;-||-&gt;</tt></td><td>                &#x21FC;</td><td> U+21FC LEFT RIGHT ARROW WITH DOUBLE VERTICAL STROKE
+</td></tr><tr><td><tt>&lt;|-|&gt;</tt></td><td>                &#x21FF;</td><td> U+21FF LEFT RIGHT OPEN-HEADED ARROW
+</td></tr><tr><td><tt>&lt;--&gt;</tt></td><td>                &#x27F7;</td><td> U+27F7 LONG LEFT RIGHT ARROW
+</td></tr><tr><td><tt>&lt;==&gt;</tt></td><td>                &#x27FA;</td><td> U+27FA LONG LEFT RIGHT DOUBLE ARROW
+</td></tr><tr><td><tt>&lt;=|=&gt;</tt></td><td>                &#x2904;</td><td> U+2904 LEFT RIGHT DOUBLE ARROW WITH VERTICAL STROKE
+</td></tr><tr><td><tt>&lt;|=|&gt;</tt></td><td>                &#x2B04;</td><td> U+2B04 LEFT RIGHT WHITE ARROW
+</td></tr><tr><td><tt>&lt;*|=*=|*&gt;</tt></td><td>                &#x2B0C;</td><td> U+2B0C LEFT RIGHT BLACK ARROW
+</td></tr><tr><td>          </td><td>    
+</td></tr><tr><td><tt>--\</tt></td><td>                &#x21C0;</td><td> U+21C0 RIGHTWARDS HARPOON WITH BARB UPWARDS
+</td></tr><tr><td><tt>--/</tt></td><td>                &#x21C1;</td><td> U+21C1 RIGHTWARDS HARPOON WITH BARB DOWNWARDS
+</td></tr><tr><td><tt>--\|</tt></td><td>                &#x2953;</td><td> U+2953 RIGHTWARDS HARPOON WITH BARB UP TO BAR
+</td></tr><tr><td><tt>--/|</tt></td><td>                &#x2957;</td><td> U+2957 RIGHTWARDS HARPOON WITH BARB DOWN TO BAR
+</td></tr><tr><td><tt>|--\</tt></td><td>                &#x295B;</td><td> U+295B RIGHTWARDS HARPOON WITH BARB UP FROM BAR
+</td></tr><tr><td><tt>|--/</tt></td><td>                &#x295F;</td><td> U+295F RIGHTWARDS HARPOON WITH BARB DOWN FROM BAR
+</td></tr><tr><td>          </td><td>    
+</td></tr><tr><td><tt>/--</tt></td><td>                &#x21BC;</td><td> U+21BC LEFTWARDS HARPOON WITH BARB UPWARDS
+</td></tr><tr><td><tt>\--</tt></td><td>                &#x21BD;</td><td> U+21BD LEFTWARDS HARPOON WITH BARB DOWNWARDS
+</td></tr><tr><td><tt>|/--</tt></td><td>                &#x2952;</td><td> U+2952 LEFTWARDS HARPOON WITH BARB UP TO BAR
+</td></tr><tr><td><tt>|\--</tt></td><td>                &#x2956;</td><td> U+2956 LEFTWARDS HARPOON WITH BARB DOWN TO BAR
+</td></tr><tr><td><tt>/--|</tt></td><td>                &#x295A;</td><td> U+295A LEFTWARDS HARPOON WITH BARB UP FROM BAR
+</td></tr><tr><td><tt>\--|</tt></td><td>                &#x295E;</td><td> U+295E LEFTWARDS HARPOON WITH BARB DOWN FROM BAR
+</td></tr><tr><td>          </td><td>    
+</td></tr><tr><td><tt>/==/</tt></td><td>                &#x21CB;</td><td> U+21CB LEFTWARDS HARPOON OVER RIGHTWARDS HARPOON
+</td></tr><tr><td><tt>\==\</tt></td><td>                &#x21CC;</td><td> U+21CC RIGHTWARDS HARPOON OVER LEFTWARDS HARPOON
+</td></tr><tr><td><tt>/--/</tt></td><td>                &#x294A;</td><td> U+294A LEFT BARB UP RIGHT BARB DOWN HARPOON
+</td></tr><tr><td><tt>\--\</tt></td><td>                &#x294B;</td><td> U+294B LEFT BARB DOWN RIGHT BARB UP HARPOON
+</td></tr><tr><td><tt>/--\</tt></td><td>                &#x294E;</td><td> U+294E LEFT BARB UP RIGHT BARB UP HARPOON
+</td></tr><tr><td><tt>\--/</tt></td><td>                &#x2950;</td><td> U+2950 LEFT BARB DOWN RIGHT BARB DOWN HARPOON
+</td></tr><tr><td>          </td><td>    
+</td></tr><tr><td><tt>|--</tt></td><td>                &#x22A2;</td><td> U+22A2 RIGHT TACK
+</td></tr><tr><td><tt>|-</tt></td><td>                &#x22A6;</td><td> U+22A6 ASSERTION
+</td></tr><tr><td><tt>|=</tt></td><td>                &#x22A7;</td><td> U+22A7 MODELS
+</td></tr><tr><td><tt>|==</tt></td><td>                &#x22A8;</td><td> U+22A8 TRUE
+</td></tr><tr><td><tt>||--</tt></td><td>                &#x22A9;</td><td> U+22A9 FORCES
+</td></tr><tr><td><tt>|||-</tt></td><td>                &#x22AA;</td><td> U+22AA TRIPLE VERTICAL BAR RIGHT TURNSTILE
+</td></tr><tr><td><tt>||==</tt></td><td>                &#x22AB;</td><td> U+22AB DOUBLE VERTICAL BAR DOUBLE RIGHT TURNSTILE
+</td></tr><tr><td><tt>|-/-</tt></td><td>                &#x22AC;</td><td> U+22AC DOES NOT PROVE
+</td></tr><tr><td><tt>|=/=</tt></td><td>                &#x22AD;</td><td> U+22AD NOT TRUE
+</td></tr><tr><td><tt>||-/-</tt></td><td>                &#x22AE;</td><td> U+22AE DOES NOT FORCE
+</td></tr><tr><td><tt>||=/=</tt></td><td>                &#x22AF;</td><td> U+22AF NEGATED DOUBLE VERTICAL BAR DOUBLE RIGHT TURNSTILE
+</td></tr><tr><td><tt>|---</tt></td><td>                &#x27DD;</td><td> U+27DD LONG RIGHT TACK
+</td></tr><tr><td>          </td><td>    
+</td></tr><tr><td><tt>--|</tt></td><td>                &#x22A3;</td><td> U+22A3 LEFT TACK
+</td></tr><tr><td><tt>---|</tt></td><td>                &#x27DE;</td><td> U+27DE LONG LEFT TACK
+</td></tr><tr><td><tt>-|</tt></td><td>                &#x2ADE;</td><td> U+2ADE SHORT LEFT TACK
+</td></tr><tr><td><tt>--||        </tt></td><td>        &#x2AE3;</td><td> U+2AE3 DOUBLE VERTICAL BAR LEFT TURNSTILE
+</td></tr><tr><td><tt>==|</tt></td><td>                &#x2AE4;</td><td> U+2AE4 VERTICAL BAR DOUBLE LEFT TURNSTILE
+</td></tr><tr><td><tt>==||</tt></td><td>                &#x2AE5;</td><td> U+2AE5 DOUBLE VERTICAL BAR DOUBLE LEFT TURNSTILE
+</td></tr><tr><td>          </td><td>    
+</td></tr><tr><td><tt>-||-        </tt></td><td>               &#x27DB;</td><td> U+27DB LEFT AND RIGHT TACK
+</td></tr><tr><td><tt>=||=</tt></td><td>                &#x27DA;</td><td> U+27DA LEFT AND RIGHT DOUBLE TURNSTILE
+</td></tr></table> 
+<p> 
+Note that, under these rules, the ASCII token <tt>=/=</tt> for "not equals" is considered an "arrow", not that it really matters.  The other two cases of interest that have empty head and empty tail are <tt>-||-</tt> for &#x27DB;</td><td> U+27DB LEFT AND RIGHT TACK and <tt>=||=</tt> for U+27DA LEFT AND RIGHT DOUBLE TURNSTILE.
+</p> 
+</div> 
+   </div> 
+   
+<!--  
+  <script type="text/javascript"> 
+   addHeadingLinks(document.getElementById("searchable"), "Link to this section");
+  </script> 
+-->
